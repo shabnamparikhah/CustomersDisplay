@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>show details</title>
+
+</head>
+<body>
+<div class="container" style="padding-top: 100px">
+
+    <table class="table table-striped">
+        <tr>
+            <td colspan="11">
+                <h1 align="center">List of all customer</h1>
+            </td>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="11"><hr></td>
+        </tr>
+        <tr>
+
+            <th >Title </th>
+            <th >FirstName</th>
+            <th >LastName</th>
+               <th>StreetAddress</th>
+               <th>City</th>
+               <th>State</th>
+               <th>SipCode</th>
+               <th>EmailAddress</th>
+               <th>Position</th>
+               <th>CustometId</th>
+               <th>CompanyId</th>
+        </tr>
+        <tr th:each="customer : ${customers}"  >
+            <td >  <span th:text="${customer.Title}"></span><br/></td>
+            <td >  <span th:text="${customer.FirstName}"></span><br/></td>
+            <td > <span th:text="${customer.LastName}"></span><br/></td>
+
+
+              <td>  <span th:text="${customer.StreetAddress}"></span><br/></td>
+              <td>  <span th:text="${customer.City}"></span><br/></td>
+              <td>  <span th:text="${customer.State}"></span><br/></td>
+              <td>  <span th:text="${customer.ZipCode}"></span><br/></td>
+              <td>  <span th:text="${customer.EmailAddress}"></span><br/></td>
+              <td>  <span th:text="${customer.Position}"></span><br/></td>
+              <td>  <span th:text="${customer.customerId}"></span><br/></td>
+              <td>  <span th:text="${customer.CompanyID}"></span><br/></td>
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

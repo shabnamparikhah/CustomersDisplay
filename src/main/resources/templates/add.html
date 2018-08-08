@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Add Customer</title>
+    </head>
+<body>
+<form action="#" th:action="@{/processAdd}" th:object="${customers}" method="post">
+<div class="container" style="padding-top: 100px">
+    <table class="table table-striped">
+        <tr>
+            <td colspan="2">
+                <h1 align="center" > Add Form</h1>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                <input type="hidden" th:field="*{customerId}"/>
+                Title : <input class="form-control"  type="text" th:field="*{Title}"  />
+                        <span th:if="${#fields.hasErrors('Title')}"
+                              th:errors="*{Title}"></span><br />
+                    </div>
+                </div>
+            </td>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        FirstName :<input class="form-control"  type="text" th:field="*{FirstName}" />
+                        <span th:if="${#fields.hasErrors('FirstName')}"
+                              th:errors="*{FirstName}"></span><br />
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+
+                        LastName : <input class="form-control"  type="text" th:field="*{lastName}"  />
+                        <span th:if="${#fields.hasErrors('lastName')}"
+                              th:errors="*{lastName}"></span><br />
+                    </div>
+                </div>
+            </td>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        City :<input class="form-control"  type="text"  th:field="*{City}"/>
+                        <span th:if="${#fields.hasErrors('City')}"
+                              th:errors="*{City}"></span><br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+            <tr>
+        <td colspan="2">
+            <div class="form-group row">
+                <div class="col-xs-12">
+
+                    Address : <input class="form-control"  type="text" th:field="*{StreetAddress}"  />
+                    <span th:if="${#fields.hasErrors('StreetAddress')}"
+                          th:errors="*{StreetAddress}"></span><br />
+                </div>
+            </div>
+        </td>
+    </tr>
+        <tr>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+
+                        State : <input class="form-control"  type="text" th:field="*{State}"  />
+                        <span th:if="${#fields.hasErrors('State')}"
+                              th:errors="*{State}"></span><br />
+                    </div>
+                </div>
+            </td>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        ZipCode :<input class="form-control"  type="text" th:field="*{ZipCode}"  />
+                        <span th:if="${#fields.hasErrors('ZipCode')}"
+                              th:errors="*{ZipCode}"></span><br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+
+                        EmailAddress : <input class="form-control"  type="text" th:field="*{EmailAddress}"  />
+                        <span th:if="${#fields.hasErrors('EmailAddress')}"
+                              th:errors="*{EmailAddress}"></span><br />
+                    </div>
+                </div>
+            </td>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        Position :<input class="form-control"  type="text"  th:field="*{Position}" />
+                        <span th:if="${#fields.hasErrors('Position')}"
+                              th:errors="*{Position}"></span><br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+      <!--  <tr>
+            <td >
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        CompanyID :<input class="form-control"  type="text"  th:field="*{CompanyID}" />
+                        <span th:if="${#fields.hasErrors('CompanyID')}"
+                              th:errors="*{CompanyID}"></span><br />
+                    </div>
+                </div>
+            </td>
+        </tr>-->
+        <tr>
+            <td>
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</form>
+</body>
+</html>

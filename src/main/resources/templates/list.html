@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>List of customer</title>
+</head>
+<body>
+<form action="#" th:action="@{/process}"  method="post">
+<div class="container" style="padding-top: 100px">
+
+<table class="table table-striped">
+    <tr>
+        <td colspan="4">
+            <h1 align="center">List of all customer</h1>
+        </td>
+        <tr>
+    <td>
+        <input   class="form-control" type="text" name="search" />
+       </td>
+    <td>
+
+            <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+
+    </td>
+    </tr>
+    <tr>
+        <td colspan="4"><hr></td>
+    </tr>
+    <tr>
+
+        <th >Title </th>
+        <th >FirstName</th>
+        <th >LastName</th>
+       </tr>
+    <tr th:each="customer : ${customers}">
+        <td >  <span th:text="${customer.Title}"></span><br/></td>
+        <td >  <span th:text="${customer.FirstName}"></span><br/></td>
+        <td > <span th:text="${customer.LastName}"></span><br/></td>
+        <td> <a th:href="@{/detail/{id}(id=${customer.customerId})}">Details</a></td>
+
+        </tr>
+    <tr>
+
+    </tr>
+</table>
+</div>
+</form>
+</body>
+</html>
