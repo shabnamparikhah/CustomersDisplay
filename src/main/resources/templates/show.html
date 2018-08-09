@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container" style="padding-top: 100px">
-
+    <a href="/git ini" class="header" > Home Page</a><br/>
     <table class="table table-striped">
         <tr>
             <td colspan="11">
@@ -39,22 +39,20 @@
                <th>EmailAddress</th>
                <th>Position</th>
                <th>CustometId</th>
-               <th>CompanyId</th>
+
         </tr>
         <tr th:each="customer : ${customers}"  >
-            <td >  <span th:text="${customer.Title}"></span><br/></td>
-            <td >  <span th:text="${customer.FirstName}"></span><br/></td>
-            <td > <span th:text="${customer.LastName}"></span><br/></td>
-
-
-              <td>  <span th:text="${customer.StreetAddress}"></span><br/></td>
-              <td>  <span th:text="${customer.City}"></span><br/></td>
-              <td>  <span th:text="${customer.State}"></span><br/></td>
-              <td>  <span th:text="${customer.ZipCode}"></span><br/></td>
-              <td>  <span th:text="${customer.EmailAddress}"></span><br/></td>
-              <td>  <span th:text="${customer.Position}"></span><br/></td>
-              <td>  <span th:text="${customer.customerId}"></span><br/></td>
-              <td>  <span th:text="${customer.CompanyID}"></span><br/></td>
+            <td >  <span th:text="${customer.title}"></span><br/></td>
+            <td >  <span th:text="${customer.firstname}"></span><br/></td>
+            <td > <span th:text="${customer.lastname}"></span><br/></td>
+              <td>  <span th:text="${customer.streetaddress}"></span><br/></td>
+              <td>  <span th:text="${customer.city}"></span><br/></td>
+              <td>  <span th:text="${customer.state}"></span><br/></td>
+              <td>  <span th:text="${customer.zipcode}"></span><br/></td>
+              <td>  <span th:text="${customer.emailaddress}"></span><br/></td>
+              <td>  <span th:text="${customer.position}"></span><br/></td>
+              <td>  <span th:text="${customer.id}"></span><br/></td>
+              <!--<td>  <span th:text="${customer.companyid}"></span><br/></td>-->
         </tr>
         <tr>
 

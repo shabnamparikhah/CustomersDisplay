@@ -13,7 +13,7 @@
 <body>
 <form action="#" th:action="@{/process}"  method="post">
 <div class="container" style="padding-top: 100px">
-
+    <a href="/add" class="header" > Add Page</a><br/>
 <table class="table table-striped">
     <tr>
         <td colspan="4">
@@ -39,10 +39,10 @@
         <th >LastName</th>
        </tr>
     <tr th:each="customer : ${customers}">
-        <td >  <span th:text="${customer.Title}"></span><br/></td>
-        <td >  <span th:text="${customer.FirstName}"></span><br/></td>
-        <td > <span th:text="${customer.LastName}"></span><br/></td>
-        <td> <a th:href="@{/detail/{id}(id=${customer.customerId})}">Details</a></td>
+        <td >  <span th:text="${customer.title}"></span><br/></td>
+        <td >  <span th:text="${customer.firstname}"></span><br/></td>
+        <td > <span th:text="${customer.lastname}"></span><br/></td>
+        <td> <a th:href="@{/detail/{id}(id=${customer.id})}">Details</a></td>
 
         </tr>
     <tr>

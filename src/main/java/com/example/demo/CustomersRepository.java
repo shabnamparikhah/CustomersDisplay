@@ -5,6 +5,6 @@ import java.util.ArrayList;
 
 public interface CustomersRepository extends CrudRepository<Customer,Long>{
     /*Customer findById(Long id);*/
-    ArrayList<Customer> findByLastName(String lastName);
+    ArrayList<Customer> findBylastname(String lastname);
 
 }

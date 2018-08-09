@@ -21,12 +21,8 @@ public class HomeController {
     return "list";
 }
 
-    @RequestMapping("/add")
-    public String addCustomer(Model model)
-    {
-        model.addAttribute("customers",new Customer());
-        return "add";
-    }
+
+
     @RequestMapping("/detail/{id}")
     public String showCourse(@PathVariable("id") long id , Model model)
     {
@@ -37,10 +33,15 @@ public class HomeController {
     @RequestMapping("/process" )
     public String processForm (@RequestParam("search") String lastName, Model model)
     {
-        model.addAttribute("customers",customersRepository.findByLastName(lastName));
+        model.addAttribute("customers",customersRepository.findBylastname(lastName));
         return "list";
     }
 
+    @GetMapping("/add")
+    public String addCustomer(Model model) {
+        model.addAttribute("customers",new Customer());
+        return "add";
+    }
 
     @PostMapping("/processAdd")
     public String processForm (@Valid Customer customer , BindingResult result)

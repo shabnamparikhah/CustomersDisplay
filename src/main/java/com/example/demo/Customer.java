@@ -10,107 +10,101 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Customer {
+
     @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-    private long customerId;
-    private String Title;
-    private String FirstName;
-    private String lastName;
-    private String StreetAddress;
-    private String City;
-    private String State;
-    private String ZipCode;
-    private String EmailAddress;
-    private String Position;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-    private int CompanyID;
+    private String title;
+    private String firstname;
+    private String lastname;
+    private String streetaddress;
+    private String city;
+    private String state;
+    private String zipcode;
+    private String emailaddress;
+    private String position;
+//    private int companyid;
 
-    public String getLastName() {
-        return lastName;
+
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
-    public String getFirstName() {
-        return FirstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-
-    public String getStreetAddress() {
-        return StreetAddress;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setStreetAddress(String streetAddress) {
-        StreetAddress = streetAddress;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getStreetaddress() {
+        return streetaddress;
+    }
+
+    public void setStreetaddress(String streetaddress) {
+        this.streetaddress = streetaddress;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
-    public String getZipCode() {
-        return ZipCode;
+
+    public String getEmailaddress() {
+        return emailaddress;
     }
 
-    public void setZipCode(String zipCode) {
-        ZipCode = zipCode;
-    }
-
-    public String getEmailAddress() {
-        return EmailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        EmailAddress = emailAddress;
+    public void setEmailaddress(String emailaddress) {
+        this.emailaddress = emailaddress;
     }
 
     public String getPosition() {
-        return Position;
+        return position;
     }
 
     public void setPosition(String position) {
-        Position = position;
-    }
-
-    public long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(long customerId) {
-        this.customerId = customerId;
-    }
-
-    public int getCompanyID() {
-        return CompanyID;
-    }
-
-    public void setCompanyID(int companyID) {
-        CompanyID = companyID;
+        this.position = position;
     }
 }
